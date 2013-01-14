@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Nerrsoft.com Hotspot Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Nerrsoft Hotspot WIFI Login Page" />
+        <meta name="keywords" content="Nerrsoft, Hotspot, Login, WIFI" />
+        <meta name="author" content="Leon Zhuang" />
+        <link rel="shortcut icon" href="../favicon.ico">
+        <script src="jquery.min.js"></script>
+        <script src="jquery.md5.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+
+        <script>
+            $(document).ready(function(){
+                $("#submit").click(function(){
+                    if($.md5($.md5($("#mobile").val()))!="677cf234ef778f58105e6a82c10d73b0")
+                        return false;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Nerrsoft.com Hotspot <span>Login</span></h1>
+                <nav class="codrops-demos">
+                    <span>SSID: <strong>"Nerrsoft.com"</strong> is not a public or free WIFI network, it's for home use only.</span>
+                </nav>
+            </header>
+            <section>               
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="$action" autocomplete="on" method="post"> 
+                                <h1>Log in</h1> 
+                                <p> 
+                                    <label for="mobile" class="uname" data-icon="p" > Please input Leon Zhuang's mobile phone number ^^ </label>
+                                    <input id="mobile" name="mobile" required="required" type="text" placeholder="eg.13888888888"/>
+                                </p>
+                                <p class="login button"> 
+                                    <input id="submit" type="submit" value="Login" /> 
+                                </p>
+                                <p class="change_link">
+                                    Don't you know ?  haha, bye bye. <!-- <a href="http://nerrsoft.com" target="_blank">http://nerrsoft.com</a> -->
+                                </p>
+
+                                <input type="hidden" name="mode_login">
+                                <input type="hidden" name="redirect" value="$redirect">
+                                <input type="hidden" name="accept_terms" value="yes">
+                            </form>
+                        </div>
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>
